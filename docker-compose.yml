@@ -36,16 +36,16 @@ services:
     depends_on:
       - db
 
-  # seed:
-  #   build: .
-  #   entrypoint: ["npx", "sequelize-cli", "db:seed:all"]
-  #   environment:
-  #     DB_HOST: db
-  #     DB_USER: user
-  #     DB_PASS: password
-  #     DB_NAME: mydatabase
-  #   depends_on:
-  #     - db
+  seed:
+    build: .
+    entrypoint: ["npx", "sequelize-cli", "db:seed:all"]
+    environment:
+      DB_HOST: db
+      DB_USER: user
+      DB_PASS: password
+      DB_NAME: mydatabase
+    depends_on:
+      - db
 
 volumes:
   postgres_data:

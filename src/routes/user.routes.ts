@@ -4,6 +4,6 @@ import roleCheck from "@middlewares/roleCheck.middleware";
 
 const router = Router();
 
-router.post("/users", roleCheck(["admin"]), userController.createUser);
+router.post("/create", roleCheck(["admin"]), userController.createUser);
 
 export default router;
