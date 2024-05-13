@@ -2,6 +2,10 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+    // Clear existing data
+    await queryInterface.bulkDelete("users", null, {});
+
+    // Insert new data
     await queryInterface.bulkInsert("grocery_items", [
       {
         name: "Apples",
