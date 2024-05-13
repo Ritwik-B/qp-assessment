@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && tsc-alias"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^2.4.3",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.5",
@@ -23,6 +24,7 @@
     "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.12.11",
     "@types/sequelize": "^4.28.20",
+    "tsc-alias": "^1.8.9",
     "typescript": "^5.4.5"
   }
 }

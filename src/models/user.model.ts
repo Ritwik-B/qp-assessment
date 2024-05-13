@@ -1,6 +1,6 @@
 import { Model, DataTypes } from "sequelize";
 import dbConnector from "@database/postgres.database";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 interface UserAttributes {
   id?: number; // Make `id` optional as it's auto-generated
@@ -25,7 +25,7 @@ class User extends Model<UserAttributes> implements UserAttributes {
 User.init(
   {
     id: {
-      type: DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
