@@ -8,7 +8,10 @@ WORKDIR /home/node/app
 COPY package*.json ./
 
 # Install app dependencies
-RUN npm i
+RUN npm install
+
+# Install nodemon globally
+RUN npm install -g nodemon
 
 # Copy the rest of the application code
 COPY . .
@@ -16,6 +19,4 @@ COPY . .
 # Your app binds to port 3000, so you'll use the EXPOSE instruction to have it mapped by the docker daemon
 EXPOSE 3000
 
-RUN npm run build
-
-CMD ["node", "dist/index.js"] 
+CMD ["npm", "start"]
